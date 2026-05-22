@@ -8,7 +8,7 @@ on:
 env:
   REGISTRY: ghcr.io
   APP_NAME: vercel-blog
-  IMAGE_NAME: ${{ github.repository_owner }}/$APP_NAME
+  IMAGE_NAME: ${{ github.repository_owner }}/${{ env.IMAGE_NAME }}
 
 jobs:
   container:
