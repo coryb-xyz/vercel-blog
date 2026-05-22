@@ -65,7 +65,7 @@ jobs:
           VERSION=${GITHUB_REF_NAME#v}
           
           # Package using the dynamic version and set appVersion to match
-          helm package helm/ --version "$VERSION" --app-version "$VERSION"
+          helm package $APP_NAME/ --version "$VERSION" --app-version "$VERSION"
           
           # Push the specific file created
           helm push $APP_NAME-"$VERSION".tgz oci://ghcr.io/${{ github.repository_owner }}/charts
