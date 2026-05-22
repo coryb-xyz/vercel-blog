@@ -77,6 +77,14 @@ autoscaling:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
 
+volumes:
+  - name: next-cache
+    emptyDir: {}
+
+volumeMounts:
+  - name: next-cache
+    mountPath: /app/blog/.next/cache
+
 nodeSelector: {}
 
 tolerations: []
